@@ -111,10 +111,11 @@ tokenize(const std::string& line, char separator)
     for (size_t idx = 0; idx < count; idx++) {
         s.clear();
         s.append(line, marks[idx] + 1, marks[idx + 1] - marks[idx] - 1);
-        auto str = trim(s).c_str();
+        auto trimmed = trim(s);
+        auto str = trimmed.c_str();
         auto v = std::strtof(str, &end);
         if (v == 0 && end == str) {
-            std::cerr << "string to float convertion error on " << str << std::endl;
+            std::cerr << "string to float convertion error on '" << s << "'" << std::endl;
             exit(EXIT_FAILURE);
         }
         tokens.push_back(v);
