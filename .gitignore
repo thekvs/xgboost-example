@@ -1,0 +1,11 @@
+.tags*
+tags
+.ycm_extra_conf.*
+*.swp
+.vscode/
+.venv/
+build/
+compile_commands.json
+.Rproj.user
+*.Rproj
+.Rhistory
