@@ -161,7 +161,7 @@ main(int argc, char** argv)
 
     check_xgboost(XGBoosterCreate(nullptr, 0, &booster));
     check_xgboost(XGBoosterLoadModel(booster, args.model_file.c_str()));
-    check_xgboost(XGDMatrixCreateFromMat(data.data(), nrow, ncol, 0, &dtest));
+    check_xgboost(XGDMatrixCreateFromMat(data.data(), nrow, ncol, -99999, &dtest));
     check_xgboost(XGBoosterPredict(booster, dtest, 0, 0, &out_len, &out_result));
 
     if (out_len != nrow) {
