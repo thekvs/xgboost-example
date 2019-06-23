@@ -174,7 +174,7 @@ main(int argc, char** argv)
     check_stream_open(result, args.result_file);
 
     for (bst_ulong i = 0; i < out_len; i++) {
-        result << std::fixed << std::setprecision(3) << out_result[i] << std::endl;
+        result << i << "," << std::fixed << std::setprecision(3) << out_result[i] << std::endl;
     }
 
     result.close();
