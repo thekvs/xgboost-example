@@ -3,8 +3,9 @@ tags
 .ycm_extra_conf.*
 *.swp
 .vscode/
-.venv/
-build/
+.venv
+build
+.clangd
 compile_commands.json
 .Rproj.user
 *.Rproj
