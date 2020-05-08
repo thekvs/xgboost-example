@@ -16,7 +16,8 @@ ExternalProject_Add(
     xgboost
     PREFIX ${XGBOOST_PREFIX}
     GIT_REPOSITORY "https://github.com/dmlc/xgboost.git"
-    GIT_TAG "release_0.90"
+    GIT_TAG "v1.0.2"
+    GIT_SHALLOW ON
     CMAKE_ARGS
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
         -DCMAKE_INSTALL_PREFIX=${XGBOOST_INSTALL_PREFIX}
@@ -31,7 +32,7 @@ ExternalProject_Add(
     cxxopts
     PREFIX ${CXXOPTS_PREFIX}
     URL "https://github.com/jarro2783/cxxopts/archive/v2.1.2.tar.gz"
-    URL_MD5 "51af98ad0b7ec6fb7aa1cf96ea65fff8"
+    URL_HASH MD5=51af98ad0b7ec6fb7aa1cf96ea65fff8
     CMAKE_ARGS
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
         -DCMAKE_INSTALL_PREFIX=${CXXOPTS_INSTALL_PREFIX}
@@ -49,5 +50,7 @@ ExternalProject_Add(
         -Dxgboost_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/lib/cmake/xgboost/
         -Dcxxopts_DIR:PATH=${CXXOPTS_INSTALL_PREFIX}/lib/cmake/cxxopts/
         -DCXXOPTS_ROOT:STRING=${CXXOPTS_INSTALL_PREFIX}
-    DEPENDS xgboost cxxopts
+    DEPENDS
+        xgboost
+        cxxopts
 )
