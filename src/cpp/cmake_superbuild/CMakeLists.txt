@@ -16,7 +16,7 @@ ExternalProject_Add(
     xgboost
     PREFIX ${XGBOOST_PREFIX}
     GIT_REPOSITORY "https://github.com/dmlc/xgboost.git"
-    GIT_TAG "v1.0.2"
+    GIT_TAG "v1.2.0"
     GIT_SHALLOW ON
     CMAKE_ARGS
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
