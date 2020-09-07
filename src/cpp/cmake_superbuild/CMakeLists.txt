@@ -16,12 +16,13 @@ ExternalProject_Add(
     xgboost
     PREFIX ${XGBOOST_PREFIX}
     GIT_REPOSITORY "https://github.com/dmlc/xgboost.git"
-    GIT_TAG "v1.2.0"
+    # GIT_TAG "v1.2.0"
     GIT_SHALLOW ON
     CMAKE_ARGS
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
         -DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
         -DCMAKE_C_COMPILER=${CMAKE_C_COMPILER}
+        -DBUILD_STATIC_LIB=ON
         -DCMAKE_INSTALL_PREFIX=${XGBOOST_INSTALL_PREFIX}
     LOG_INSTALL ON
 )
@@ -52,6 +53,8 @@ ExternalProject_Add(
         -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
         -DCMAKE_CXX_COMPILER:PATH=${CMAKE_CXX_COMPILER}
         -Dxgboost_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/lib/cmake/xgboost/
+        -Drabit_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/lib/cmake/rabit/
+        -Ddmlc_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/lib/cmake/dmlc/
         -Dcxxopts_DIR:PATH=${CXXOPTS_INSTALL_PREFIX}/lib/cmake/cxxopts/
     DEPENDS
         xgboost
