@@ -53,7 +53,6 @@ ExternalProject_Add(
         -DCMAKE_CXX_COMPILER:PATH=${CMAKE_CXX_COMPILER}
         -Dxgboost_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/lib/cmake/xgboost/
         -Dcxxopts_DIR:PATH=${CXXOPTS_INSTALL_PREFIX}/lib/cmake/cxxopts/
-        -DCXXOPTS_ROOT:STRING=${CXXOPTS_INSTALL_PREFIX}
     DEPENDS
         xgboost
         cxxopts

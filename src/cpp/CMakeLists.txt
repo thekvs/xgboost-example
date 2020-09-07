@@ -20,18 +20,11 @@ set_target_properties(
             CXX_STANDARD_REQUIRED YES
             CXX_EXTENSIONS NO
 )
-
-target_include_directories(
-    ${PREDICT}
-        SYSTEM PRIVATE
-            ${XGBOOST_INCLUDE_DIRS}
-            ${CXXOPTS_ROOT}/include/
-)
-
 target_link_libraries(
     ${PREDICT}
         PRIVATE
             xgboost::xgboost
+            cxxopts::cxxopts
             Threads::Threads
 )
 
