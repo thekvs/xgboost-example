@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 project(xgboost-example-superbuild LANGUAGES CXX C VERSION 0.1.0)
 
 include(ExternalProject)
+include(GNUInstallDirs)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -52,8 +53,8 @@ ExternalProject_Add(
     CMAKE_ARGS
         -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
         -DCMAKE_CXX_COMPILER:PATH=${CMAKE_CXX_COMPILER}
-        -Dxgboost_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/lib/cmake/xgboost/
-        -Ddmlc_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/lib/cmake/dmlc/
+        -Dxgboost_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/cmake/xgboost/
+        -Ddmlc_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/cmake/dmlc/
         -Dcxxopts_DIR:PATH=${CXXOPTS_INSTALL_PREFIX}/lib/cmake/cxxopts/
     DEPENDS
         xgboost
