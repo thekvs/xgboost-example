@@ -53,7 +53,6 @@ ExternalProject_Add(
         -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
         -DCMAKE_CXX_COMPILER:PATH=${CMAKE_CXX_COMPILER}
         -Dxgboost_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/lib/cmake/xgboost/
-        -Drabit_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/lib/cmake/rabit/
         -Ddmlc_DIR:PATH=${XGBOOST_INSTALL_PREFIX}/lib/cmake/dmlc/
         -Dcxxopts_DIR:PATH=${CXXOPTS_INSTALL_PREFIX}/lib/cmake/cxxopts/
     DEPENDS

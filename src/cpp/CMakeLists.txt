@@ -6,7 +6,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
 
 find_package(dmlc CONFIG REQUIRED)
-find_package(rabit CONFIG REQUIRED)
 find_package(xgboost CONFIG REQUIRED)
 find_package(cxxopts CONFIG REQUIRED)
 find_package(OpenMP REQUIRED)
@@ -28,7 +27,6 @@ target_link_libraries(
         PRIVATE
             xgboost::xgboost
             dmlc::dmlc
-            rabit::rabit
             cxxopts::cxxopts
             OpenMP::OpenMP_CXX
             Threads::Threads
