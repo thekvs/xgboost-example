@@ -1,11 +1,8 @@
 ## Compiling
 
-1. `mkdir build`
-1. `cd build`
-1. `cmake ../cmake_superbuild/`
-1. `cmake --build .`
-1. `cmake --build predict` (to rebuild only final target)
+1. `cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-linux-release -DCMAKE_BUILD_TYPE=Release`
+2. `cmake --build build --parallel $(nproc)`
 
 ## Usage
 
-From the `build` folder: `./predict/predict --model ../../../data/models/1.xgb --data ../../../data/input/data.csv --result /tmp/c.txt`
+From the `build` folder: `./predict --model ../../../data/models/1.xgb --data ../../../data/input/data.csv --result /tmp/c.txt`
